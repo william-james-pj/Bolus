@@ -332,6 +332,7 @@ header {
   left: 35vw;
   z-index: 5;
   overflow: hidden;
+  transition: all 1s ease;
 }
 .modal .modalHeader {
   width: 100%;

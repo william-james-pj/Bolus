@@ -170,41 +170,27 @@ function fecharModal() {
   addClass(modalFundo, 'displayNone', 0, 1, 0);
 }
 
-/*
-// Modal
-const modalFundo = document.querySelector("#modalContainer");
-const imgItens = document.querySelectorAll(".itemBox");
+// Menu
+const menuItems = document.querySelectorAll('.menu a[href^="#"]');
 
-imgItens.forEach((imgItem) => {
-  imgItem.onclick = function () {
-    let valor = this.getAttribute("modal-item"); 
-    let modal = document.querySelector(`.modal[modal-item=${valor}]`);
-    addClass(modal, 'displayBlock', 0, 1, 0);
-    addClass(modalFundo, 'displayBlock', 0, 1, 0);
-    removerClass(modalFundo, 'displayNone', 0, 1, 0);
-  };
-});
-
-modalFundo.onclick = function () {
-  fecharModal();
-};
-
-const closeModalItens = document.querySelectorAll(".modal .close");
-closeModalItens.forEach((closeModalIten) => {
-  closeModalIten.onclick = function () {
-    fecharModal();
-  };
-});
-
-function fecharModal() {
-  let modalAberto = document.querySelector("#modalContainer .displayBlock");
-  if (modalAberto != null) {
-    removerClass(modalAberto, 'displayBlock', 0, 1, 0);
-  }
-  removerClass(modalFundo, 'displayBlock', 0, 1, 0);
-  addClass(modalFundo, 'displayNone', 0, 1, 0);
+function getScrollTopByHref(element) {
+	const id = element.getAttribute('href');
+	return document.querySelector(id).offsetTop;
 }
 
+function scrollToPosition(to) {
+  window.scroll({
+    top: to,
+    behavior: "smooth",
+  })
+}
 
+function scrollToIdOnClick(event) {
+	event.preventDefault();
+	const to = getScrollTopByHref(event.currentTarget)- 53;
+	scrollToPosition(to);
+}
 
- */
+menuItems.forEach(item => {
+	item.addEventListener('click', scrollToIdOnClick);
+});
