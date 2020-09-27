@@ -1,0 +1,408 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #fdfdfd;
+}
+a{
+  text-decoration: none;
+}
+a,h1,h2,h3,h4,p{
+  margin: 0px;
+  padding: 0px;
+}
+/* nav */
+nav {
+  position: fixed;
+  width: 100%;
+  height: 8vh;
+  top: 0;
+  z-index: 3;
+  background: #fdfdfd;
+}
+nav .logo{
+  float: left;
+  color: #000;
+  font-size: 27px;
+  font-weight: 600;
+  padding-left: 60px;
+  margin-top: 10px;
+}
+nav ul{
+  float: right;
+  margin-right: 40px;
+  list-style: none;
+  position: relative;
+  margin-top: 15px;
+}
+nav ul li{
+  float: left;
+  display: inline-block;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #000;
+  font-size: 18px;
+  padding: 8px 15px;
+}
+nav ul li a:hover{
+  color:#fbe0dc;
+}
+
+/*Header*/
+header {
+  text-align: center;
+  background-color: #fbe0dc;
+  height: 92vh;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 8vh;
+}
+.BoloGostosuras {
+  font-family: "Roboto", sans-serif;
+  color: #f958af;
+  position: absolute;
+  width: 418px;
+  height: 34px;
+  left: 455px;
+  top: 255px;
+}
+.Bolus {
+  font-family: "Raleway", sans-serif;
+  font-size: 44px;
+  line-height: 64px;
+  position: absolute;
+  width: 114px;
+  height: 64px;
+  top: 176px;
+  left: 600px;
+  
+}
+.Hoje {
+  font-family: "Homemade Apple", cursive;
+  position: absolute;
+  width: 248px;
+  height: 52px;
+  left: 540px;
+  top: 383.57px;
+  transform: rotate(-6.38deg);
+}
+.BoloMorango {
+  position: absolute;
+  width: 213.38px;
+  height: 200px;
+  left: 150px;
+  top: 196px;
+  border: 5px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 25px;
+  transform: rotate(-15deg);
+}
+.BoloIntegral {
+  position: absolute;
+  width: 226.77px;
+  height: 200px;
+  right: 150px;
+  top: 196px;
+  border: 5px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 25px;
+  transform: rotate(15deg);
+}
+.Img1 {
+  position: absolute;
+  width: 206px;
+  height: 206px;
+  left: 5px;
+  top: 445px;
+}
+.Img2 {
+  position: absolute;
+  width: 206px;
+  height: 206px;
+  right: 5px;
+  top: 445px;
+  transform: rotate(270deg);
+}
+.Img3 {
+  position: absolute;
+  width: 206px;
+  height: 206px;
+  left: 5px;
+  top: 55px;
+  transform: rotate(90deg);
+}
+.Img4 {
+  position: absolute;
+  width: 206px;
+  height: 206px;
+  right: 5px;
+  top: 55px;
+  transform: rotate(180deg);
+}
+
+
+/* Receitas*/
+
+.flexboxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.displayNone {
+  display: none;
+}
+.displayPaginacaoNone {
+  display: none;
+}
+#receitas {
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+}
+#receitas .title {
+  width: 100%;
+  height: 10vh;
+}
+#receitas .title .line {
+  width: 122px;
+  height: 0px;
+  border-radius: 40px;
+  border: 2px solid #000000;
+}
+#receitas .title .text {
+  margin: 0 40px 0 40px;
+  font-size: 18px;
+}
+#receitas ul {
+  display: flex;
+  margin-bottom: 35px;
+}
+#receitas ul li {
+  list-style: none;
+  background: #ffffff;
+  width: 100px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+#receitas ul li.active {
+  background: #fbe0dc;
+  color: #000000;
+  box-shadow: 0px 8px 16px -8px rgba(0, 0, 0, 0.25);
+}
+#receitas .product {
+  flex-wrap: wrap;
+}
+#receitas .product .itemBox {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0px 50px 35px 50px;
+  border-radius: 20px;
+  transition: all 1.3s ease;
+  overflow: hidden;
+  background: #fbe0dc;
+  cursor: pointer;
+}
+#receitas .product .itemBox:hover img {
+  opacity: 0.3;
+}
+#receitas .product .itemBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 1.3s ease;
+}
+#paginacao {
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+#paginacao .container {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+#paginacao .container .button {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 20px;
+  background: #fbe0dc;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease width;
+}
+#paginacao .container .button:last-child {
+  margin-right: 0;
+}
+#paginacao .container .button.active {
+  width: 60px;
+  cursor: auto;
+}
+@media only screen and (max-width: 1030px) {
+  #receitas .title .text {
+    font-size: 24px;
+  }
+  #receitas .title .line {
+    width: 150px;
+  }
+  #receitas ul li {
+    width: 108px;
+    height: 79px;
+    font-size: 20px;
+  }
+  #modalContainer .modal {
+    top: 25vh;
+    left: 20vw;
+    width: 60vw;
+    height: 50vh;
+    box-shadow: 0 0 20px -5px #000000;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #receitas .title .text {
+    font-size: 16px;
+  }
+  #receitas .title .line {
+    width: 80px;
+  }
+  #receitas ul li {
+    width: 68px;
+    height: 39px;
+    font-size: 12px;
+  }
+  #receitas .product .itemBox {
+    width: 250px;
+    height: 250px;
+  }
+  #modalContainer .modal {
+    top: 30vh;
+    left: 5vw;
+    width: 90vw;
+    height: 40vh;
+    box-shadow: 0 0 20px -5px #000000;
+  }
+}
+@media only screen and (max-width: 330px) {
+  #receitas ul li {
+    width: 55px;
+    height: 39px;
+    font-size: 10px;
+  }
+  #receitas .product .itemBox {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Modal*/
+#modalContainer {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+.modal {
+  display: block;
+  position: relative;
+  width: 30vw;
+  height: 50vh;
+  border-radius: 20px;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 40px -5px #000000;
+  box-shadow: 0 0 40px -5px #000000;
+  top: 30vh;
+  left: 35vw;
+  z-index: 5;
+  overflow: hidden;
+}
+.modal .modalHeader {
+  width: 100%;
+  height: 15%;
+  background: #fbe0dc;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.modal .modalHeader .close {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.close:hover::before,
+.close:hover::after {
+  background: #fff;
+}
+.close::before,
+.close::after {
+  content: "";
+  position: absolute;
+  border-radius: 5px;
+  height: 7px;
+  margin-top: -4px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  background: #000;
+}
+.close::before {
+  transform: rotate(45deg);
+}
+.close::after {
+  transform: rotate(-45deg);
+}
+.modal .modalConteudo {
+  width: 100%;
+  height: 85%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "imgModal texto";
+  align-items: center;
+  justify-items: center;
+}
+.modal .modalConteudo .imgModal {
+  grid-area: imgModal;
+  background: #c4c4c4;
+  width: 80%;
+  height: 60%;
+  border-radius: 10%;
+  overflow: hidden;
+}
+.modal .modalConteudo .imgModal img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.modal .modalConteudo .texto {
+  grid-area: texto;
+  justify-self: start;
+  overflow: hidden;
+}
+.displayBlock {
+  display: block;
+}
