@@ -13,52 +13,95 @@ a,h1,h2,h3,h4,p{
   margin: 0px;
   padding: 0px;
 }
-/* nav */
+
+/* Nav */
 nav {
-  position: fixed;
-  width: 100%;
-  height: 8vh;
   top: 0;
-  z-index: 3;
-  background: #fdfdfd;
+  width: 100vw;
+  height: 10vh;
+  background: #fbe0dc;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: fixed;
+  z-index: 10;
+  transition: all 0.3s;
 }
-nav .logo{
-  float: left;
-  color: #000;
-  font-size: 27px;
-  font-weight: 600;
-  padding-left: 60px;
-  margin-top: 10px;
+nav .logoContainer {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
 }
-nav ul{
-  float: right;
-  margin-right: 40px;
+nav .logoContainer p {
+  font-size: 22px;
+  cursor: pointer;
+}
+nav .menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+nav .menu ul {
+  display: flex;
+  align-items: center;
+}
+nav .menu ul li {
+  margin-left: 20px;
   list-style: none;
-  position: relative;
-  margin-top: 15px;
 }
-nav ul li{
-  float: left;
-  display: inline-block;
-  margin: 0 5px;
-}
-nav ul li a{
+nav .menu ul li a{
+  display: block;
+  text-transform: uppercase;
   color: #000;
-  font-size: 18px;
-  padding: 8px 15px;
 }
-nav ul li a:hover{
-  color:#fbe0dc;
+nav .menu .menuBotao {
+  width: 45px;
+  height: 45px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+nav .menu .menuBotao:hover .menuIcon .bar {
+  width: 25px;
+}
+nav .menu .menuBotao .menuIcon .bar:last-child {
+  width: 15px;
+}
+nav .menu .menuBotao.closeMenu .menuIcon .bar {
+  width: 25px;
+}
+nav .menu .menuBotao.closeMenu .menuIcon .bar:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+nav .menu .menuBotao.closeMenu .menuIcon .bar:nth-child(2) {
+  transform: scale(0);
+}
+nav .menu .menuBotao.closeMenu .menuIcon .bar:last-child {
+  transform: translateY(-7px) rotate(-45deg);
+}
+nav .menu .menuBotao .menuIcon .bar {
+  width: 25px;
+  height: 2px;
+  background: #fbe0dc;
+  transition: 0.3s ease-in-out;
+}
+nav .menu .menuBotao .menuIcon .bar:nth-child(2) {
+  width: 20px;
+  margin: 5px 0;
 }
 
 /*Header*/
 header {
   text-align: center;
   background-color: #fbe0dc;
-  height: 92vh;
+  height: 90vh;
   width: 100%;
   overflow: hidden;
-  margin-top: 8vh;
+  margin-top: 10vh;
 }
 .BoloGostosuras {
   font-family: "Roboto", sans-serif;
@@ -312,6 +355,7 @@ header {
   top: 0;
   left: 0;
   position: fixed;
+  z-index: 999;
 }
 .modal {
   display: block;
@@ -323,7 +367,7 @@ header {
   box-shadow: 0 0 40px -5px #000000;
   top: 30vh;
   left: 35vw;
-  z-index: 5;
+  z-index: 999;
   overflow: hidden;
   transition: all 1s ease;
 }
@@ -435,7 +479,48 @@ header {
     box-shadow: 0 0 20px -5px #000000;
   }
 }
+@media screen and (max-width: 767px) {
+  nav .menu .menuBotao {
+    display: flex;
+  }
+  nav .menu ul {
+    display: inline-block;
+    width: 100vw;
+    height: 0;
+    background: #fff;
+    position: absolute;
+    top: 88px;
+    box-shadow: 0 5px 30px -4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+  }
+  nav .menu ul.showMenu {
+    height: 280px;
+    left: 0;
+  }
+  nav .menu ul.showMenu li {
+    height: 80px;
+    opacity: 1;
+    visibility: visible;
+  }
+  nav .menu ul li {
+    width: 50%;
+    height: 80px;
+    float: left;
+    padding-left: 40px;
+    opacity: 0;
+    visibility: hidden;
+    margin-left: 0;
+    transition: all 0.3s 0.1s;
+  }
+  nav .menu ul li:first-child,
+  nav .menu ul li:nth-child(2) {
+    margin-top: 80px;
+  }
+}
 @media only screen and (max-width: 480px) {
+  nav .menu .menuBotao {
+    display: flex;
+  }
   #sobre {
     height: 100vh;
     grid-template-columns: 1fr;

@@ -1,3 +1,43 @@
+/* Nav */
+const menuNav = document.querySelector(".menuBotao");
+menuNav.onclick = function () {
+  let ul = document.querySelector("nav ul");
+  if (menuNav.classList.contains("closeMenu")) {
+    menuNav.classList.remove("closeMenu");
+    ul.classList.remove("showMenu");
+  } else {
+    menuNav.classList.add("closeMenu");
+    ul.classList.add("showMenu");
+  }  
+  let lis = document.querySelectorAll("nav ul li");
+  lis.forEach((li) => {
+    li.onclick = function () {
+      ul.classList.remove("showMenu");
+      menuNav.classList.remove("closeMenu");
+    };
+  });
+};
+const menuItems = document.querySelectorAll('.menu a[href^="#"]');
+function getScrollTopByHref(element) {
+  const id = element.getAttribute("href");
+  return document.querySelector(id).offsetTop;
+}
+function scrollToPosition(to) {
+  window.scroll({
+    top: to,
+    behavior: "smooth",
+  });
+}
+function scrollToIdOnClick(event) {
+  event.preventDefault();
+  const to = getScrollTopByHref(event.currentTarget) - 53;
+  scrollToPosition(to);
+}
+menuItems.forEach((item) => {
+  item.addEventListener("click", scrollToIdOnClick);
+});
+
+/* Receitas */
 const intemMaxPorPagina = 12;
 
 const menuItens = document.querySelectorAll(".list");
@@ -163,34 +203,9 @@ function buttonCloseModal() {
 
 function fecharModal() {
   let modalAberto = document.querySelector("#modalContainer .modal");
-  if (modalAberto != null) { 
+  if (modalAberto != null) {
     modalFundo.removeChild(modalAberto);
   }
-  removerClass(modalFundo, 'displayBlock', 0, 1, 0);
-  addClass(modalFundo, 'displayNone', 0, 1, 0);
+  removerClass(modalFundo, "displayBlock", 0, 1, 0);
+  addClass(modalFundo, "displayNone", 0, 1, 0);
 }
-
-// Menu
-const menuItems = document.querySelectorAll('.menu a[href^="#"]');
-
-function getScrollTopByHref(element) {
-	const id = element.getAttribute('href');
-	return document.querySelector(id).offsetTop;
-}
-
-function scrollToPosition(to) {
-  window.scroll({
-    top: to,
-    behavior: "smooth",
-  })
-}
-
-function scrollToIdOnClick(event) {
-	event.preventDefault();
-	const to = getScrollTopByHref(event.currentTarget)- 53;
-	scrollToPosition(to);
-}
-
-menuItems.forEach(item => {
-	item.addEventListener('click', scrollToIdOnClick);
-});
