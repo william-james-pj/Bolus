@@ -143,6 +143,55 @@ header {
   transform: rotate(180deg);
 }
 
+/* Sobre */
+#sobre {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas:
+    "logo descricao";
+  align-items: center;
+}
+#sobre .logo {
+  grid-area: logo;
+  width: 50%;
+  height: 40%;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px -5px #000000;
+  justify-self: end;
+  z-index: 1;
+  overflow: hidden;
+}
+#sobre .logo img{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+#sobre .descricao {
+  grid-area: descricao;
+  width: 70%;
+  height: 50%;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px -5px #000000;
+  justify-self: start;
+  padding: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#sobre .descricao p:nth-child(1){
+  margin-bottom: 40px;
+}
+#sobre .descricao p:nth-child(2){
+  margin-bottom: 20px;
+}
 
 /* Receitas*/
 
@@ -255,66 +304,11 @@ header {
   width: 60px;
   cursor: auto;
 }
-@media only screen and (max-width: 1030px) {
-  #receitas .title .text {
-    font-size: 24px;
-  }
-  #receitas .title .line {
-    width: 150px;
-  }
-  #receitas ul li {
-    width: 108px;
-    height: 79px;
-    font-size: 20px;
-  }
-  #modalContainer .modal {
-    top: 25vh;
-    left: 20vw;
-    width: 60vw;
-    height: 50vh;
-    box-shadow: 0 0 20px -5px #000000;
-  }
-}
-@media only screen and (max-width: 480px) {
-  #receitas .title .text {
-    font-size: 16px;
-  }
-  #receitas .title .line {
-    width: 80px;
-  }
-  #receitas ul li {
-    width: 68px;
-    height: 39px;
-    font-size: 12px;
-  }
-  #receitas .product .itemBox {
-    width: 250px;
-    height: 250px;
-  }
-  #modalContainer .modal {
-    top: 30vh;
-    left: 5vw;
-    width: 90vw;
-    height: 40vh;
-    box-shadow: 0 0 20px -5px #000000;
-  }
-}
-@media only screen and (max-width: 330px) {
-  #receitas ul li {
-    width: 55px;
-    height: 39px;
-    font-size: 10px;
-  }
-  #receitas .product .itemBox {
-    width: 200px;
-    height: 200px;
-  }
-}
 
 /* Modal*/
 #modalContainer {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   top: 0;
   left: 0;
   position: fixed;
@@ -326,7 +320,6 @@ header {
   height: 50vh;
   border-radius: 20px;
   background: #ffffff;
-  -webkit-box-shadow: 0 0 40px -5px #000000;
   box-shadow: 0 0 40px -5px #000000;
   top: 30vh;
   left: 35vw;
@@ -406,4 +399,94 @@ header {
 }
 .displayBlock {
   display: block;
+}
+
+@media only screen and (max-width: 1030px) {
+  #sobre {
+    height: 50vh;
+  }
+  #sobre .logo {
+    width: 60%;
+    height: 40%;
+  }
+  #sobre .descricao{
+    width: 80%;
+    height: 50%;
+  }
+  #sobre .descricao p{
+    font-size: 18px;
+  }
+  #receitas .title .text {
+    font-size: 24px;
+  }
+  #receitas .title .line {
+    width: 150px;
+  }
+  #receitas ul li {
+    width: 108px;
+    height: 79px;
+    font-size: 20px;
+  }
+  #modalContainer .modal {
+    top: 25vh;
+    left: 20vw;
+    width: 60vw;
+    height: 50vh;
+    box-shadow: 0 0 20px -5px #000000;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #sobre {
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "logo "
+    "descricao";
+  }
+  #sobre .logo {
+    width: 60%;
+    height: 40%;
+    justify-self: center;
+    align-self: flex-end;
+  }
+  #sobre .descricao{
+    width: 80%;
+    height: 80%;
+    justify-self: center;
+    align-self: flex-start;
+  }
+  #receitas .title .text {
+    font-size: 16px;
+  }
+  #receitas .title .line {
+    width: 80px;
+  }
+  #receitas ul li {
+    width: 68px;
+    height: 39px;
+    font-size: 12px;
+  }
+  #receitas .product .itemBox {
+    width: 250px;
+    height: 250px;
+  }
+  #modalContainer .modal {
+    top: 30vh;
+    left: 5vw;
+    width: 90vw;
+    height: 40vh;
+    box-shadow: 0 0 20px -5px #000000;
+  }
+}
+@media only screen and (max-width: 330px) {
+  #receitas ul li {
+    width: 55px;
+    height: 39px;
+    font-size: 10px;
+  }
+  #receitas .product .itemBox {
+    width: 200px;
+    height: 200px;
+  }
 }
