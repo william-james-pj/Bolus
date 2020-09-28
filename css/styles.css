@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +15,7 @@ a{
 a,h1,h2,h3,h4,p{
   margin: 0px;
   padding: 0px;
+  font-family: 'Lobster', cursive;
 }
 
 /* Nav */
@@ -32,7 +36,7 @@ nav .logoContainer {
   padding-left: 40px;
 }
 nav .logoContainer p {
-  font-size: 22px;
+  font-size: 26px;
   cursor: pointer;
 }
 nav .menu {
@@ -51,8 +55,11 @@ nav .menu ul li {
 }
 nav .menu ul li a{
   display: block;
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: #000;
+}
+nav .menu ul li a:hover{
+  color: #fff;
 }
 nav .menu .menuBotao {
   width: 45px;
@@ -234,6 +241,10 @@ header {
 }
 #sobre .descricao p:nth-child(2){
   margin-bottom: 20px;
+}
+
+#sobre .descricao p{
+  font-family: 'Satisfy', cursive;
 }
 
 /* Receitas*/
