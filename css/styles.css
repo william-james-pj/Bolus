@@ -154,16 +154,16 @@ header .headerImg4 {
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  padding: 0 15%;
+  grid-template-areas: "logo logo logo logo descricao descricao descricao descricao descricao descricao";
   grid-template-rows: 1fr;
   gap: 1px 1px;
-  grid-template-areas:
-    "logo descricao";
   align-items: center;
 }
 #sobre .logo {
-  grid-area: logo;
-  width: 50%;
+  grid-row: 1;
+  grid-column: logo / span 5;
+  width: 70%;
   height: 40%;
   background-color: #fff;
   border-radius: 20px;
@@ -181,6 +181,7 @@ header .headerImg4 {
   object-fit: scale-down;
 }
 #sobre .descricao {
+  grid-row: 1;
   grid-area: descricao;
   width: 70%;
   height: 50%;
@@ -189,6 +190,7 @@ header .headerImg4 {
   box-shadow: 0 0 20px -10px #000000;
   justify-self: start;
   padding: 30px;
+  padding-left: 80px;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -447,7 +449,7 @@ header .headerImg4 {
     box-shadow: 0 0 20px -5px #000000;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 770px) {
   nav .menu {
     padding-right: 40px;
   }
@@ -487,6 +489,12 @@ header .headerImg4 {
   nav .menu ul li:nth-child(2) {
     margin-top: 80px;
   }
+  #sobre .logo {
+    width: 95%;
+  }
+  #sobre .descricao {
+    height: 50%;
+  }
 }
 @media only screen and (max-width: 480px) {
   nav .menu .menuBotao {
@@ -504,20 +512,31 @@ header .headerImg4 {
   #sobre {
     height: 100vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.7fr 1.3fr;
     grid-template-areas:
-    "logo "
+    "logo"
+    "logo"
+    "logo"
+    "logo"
+    "descricao"
+    "descricao"
+    "descricao"
+    "descricao"
     "descricao";
+    padding-bottom: 45%;
   }
   #sobre .logo {
     width: 60%;
-    height: 60%;
+    height: 50%;
+    grid-row:  logo / span 5;
+    grid-column: 1;
     justify-self: center;
     align-self: flex-end;
   }
   #sobre .descricao{
     width: 80%;
-    height: 70%;
+    height: 100%;
+    padding-left: 30px;
+    padding-top: 80px;
     justify-self: center;
     align-self: flex-start;
   }
