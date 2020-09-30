@@ -17,7 +17,7 @@ menuNav.onclick = function () {
     };
   });
 };
-const menuItems = document.querySelectorAll('.menu a[href^="#"]');
+const menuItems = document.querySelectorAll('nav a[href^="#"]');
 function getScrollTopByHref(element) {
   const id = element.getAttribute("href");
   return document.querySelector(id).offsetTop;
@@ -30,7 +30,7 @@ function scrollToPosition(to) {
 }
 function scrollToIdOnClick(event) {
   event.preventDefault();
-  const to = getScrollTopByHref(event.currentTarget) - 53;
+  const to = getScrollTopByHref(event.currentTarget) - 65.6;
   scrollToPosition(to);
 }
 menuItems.forEach((item) => {

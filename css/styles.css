@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 
 * {
   margin: 0;
@@ -11,6 +12,7 @@ body {
 }
 a{
   text-decoration: none;
+  color: #000;
 }
 a,h1,h2,h3,h4,p{
   margin: 0px;
@@ -43,7 +45,7 @@ nav .menu {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 40px;
+  padding-right: 60px;
 }
 nav .menu ul {
   display: flex;
@@ -71,9 +73,6 @@ nav .menu .menuBotao {
   border-radius: 50%;
   cursor: pointer;
   display: none;
-}
-nav .menu .menuBotao:hover .menuIcon .bar {
-  width: 25px;
 }
 nav .menu .menuBotao .menuIcon .bar:last-child {
   width: 15px;
@@ -110,87 +109,44 @@ header {
   overflow: hidden;
   margin-top: 10vh;
 }
-.BoloGostosuras {
-  font-family: "Roboto", sans-serif;
-  color: #f958af;
-  position: absolute;
-  width: 418px;
-  height: 34px;
-  left: 455px;
-  top: 255px;
+header .headerTitle{
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
 }
-.Bolus {
-  font-family: "Raleway", sans-serif;
-  font-size: 44px;
-  line-height: 64px;
-  position: absolute;
-  width: 114px;
-  height: 64px;
-  top: 176px;
-  left: 600px;
-  
+header .headerTitle h1{
+  font-size: 58px;
 }
-.Hoje {
-  font-family: "Homemade Apple", cursive;
-  position: absolute;
-  width: 248px;
-  height: 52px;
-  left: 540px;
-  top: 383.57px;
-  transform: rotate(-6.38deg);
+header .headerTitle p{
+  margin-top: 15px;
+  font-family: 'Pacifico', cursive;
+  font-size: 16px;
 }
-.BoloMorango {
+header img {
   position: absolute;
-  width: 213.38px;
-  height: 200px;
-  left: 150px;
-  top: 196px;
-  border: 5px solid #ffffff;
-  box-sizing: border-box;
-  border-radius: 25px;
-  transform: rotate(-15deg);
+  width: 15%;
+  height: auto;
+  z-index: 1;
 }
-.BoloIntegral {
-  position: absolute;
-  width: 226.77px;
-  height: 200px;
-  right: 150px;
-  top: 196px;
-  border: 5px solid #ffffff;
-  box-sizing: border-box;
-  border-radius: 25px;
-  transform: rotate(15deg);
-}
-.Img1 {
-  position: absolute;
-  width: 206px;
-  height: 206px;
-  left: 5px;
-  top: 445px;
-}
-.Img2 {
-  position: absolute;
-  width: 206px;
-  height: 206px;
-  right: 5px;
-  top: 445px;
-  transform: rotate(270deg);
-}
-.Img3 {
-  position: absolute;
-  width: 206px;
-  height: 206px;
-  left: 5px;
-  top: 55px;
+header .headerImg1 {
+  top: 10vh;
+  left: 0;
   transform: rotate(90deg);
 }
-.Img4 {
-  position: absolute;
-  width: 206px;
-  height: 206px;
-  right: 5px;
-  top: 55px;
+header .headerImg2 {
+  top: 10vh;
+  right: 0;
   transform: rotate(180deg);
+}
+header .headerImg3 {
+  bottom: 0vh;
+  left: 0;
+  transform: rotate(0deg);
+}
+header .headerImg4 {
+  bottom: 0vh;
+  right: 0;
+  transform: rotate(270deg);
 }
 
 /* Sobre */
@@ -211,7 +167,7 @@ header {
   height: 40%;
   background-color: #fff;
   border-radius: 20px;
-  box-shadow: 0 0 20px -5px #000000;
+  box-shadow: 0 0 20px -10px #000000;
   justify-self: end;
   z-index: 1;
   overflow: hidden;
@@ -230,7 +186,7 @@ header {
   height: 50%;
   background-color: #fff;
   border-radius: 20px;
-  box-shadow: 0 0 20px -5px #000000;
+  box-shadow: 0 0 20px -10px #000000;
   justify-self: start;
   padding: 30px;
   flex-direction: column;
@@ -242,11 +198,9 @@ header {
 #sobre .descricao p:nth-child(2){
   margin-bottom: 20px;
 }
-
 #sobre .descricao p{
-  font-family: 'Satisfy', cursive;
+  font-family: 'Pacifico', cursive;
 }
-
 /* Receitas*/
 
 .flexboxContainer {
@@ -269,6 +223,9 @@ header {
 #receitas .title {
   width: 100%;
   height: 10vh;
+}
+#receitas .title p{
+  font-size: 24px;
 }
 #receitas .title .line {
   width: 122px;
@@ -458,15 +415,15 @@ header {
 
 @media only screen and (max-width: 1030px) {
   #sobre {
-    height: 50vh;
+    height: 70vh;
   }
   #sobre .logo {
-    width: 60%;
-    height: 40%;
+    width: 70%;
+    height: 30%;
   }
   #sobre .descricao{
-    width: 80%;
-    height: 50%;
+    width: 90%;
+    height: 40%;
   }
   #sobre .descricao p{
     font-size: 18px;
@@ -491,6 +448,9 @@ header {
   }
 }
 @media screen and (max-width: 767px) {
+  nav .menu {
+    padding-right: 40px;
+  }
   nav .menu .menuBotao {
     display: flex;
   }
@@ -500,7 +460,7 @@ header {
     height: 0;
     background: #fff;
     position: absolute;
-    top: 88px;
+    top: 64px;
     box-shadow: 0 5px 30px -4px rgba(0, 0, 0, 0.2);
     transition: all 0.3s;
   }
@@ -532,25 +492,40 @@ header {
   nav .menu .menuBotao {
     display: flex;
   }
+  header img {
+    width: 20%;
+  }
+  header .headerTitle h1{
+    font-size: 38px;
+  }
+  header .headerTitle p{
+    font-size: 14px;
+  }
   #sobre {
     height: 100vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0.7fr 1.3fr;
     grid-template-areas:
     "logo "
     "descricao";
   }
   #sobre .logo {
     width: 60%;
-    height: 40%;
+    height: 60%;
     justify-self: center;
     align-self: flex-end;
   }
   #sobre .descricao{
     width: 80%;
-    height: 80%;
+    height: 70%;
     justify-self: center;
     align-self: flex-start;
+  }
+  #sobre .descricao p:nth-child(1){
+    margin-bottom: 20px;
+  }
+  #sobre .descricao p{
+    font-size: 12px;
   }
   #receitas .title .text {
     font-size: 16px;
