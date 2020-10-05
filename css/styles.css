@@ -156,6 +156,22 @@ header .headerImg4 {
   right: 0;
   transform: rotate(270deg);
 }
+.headerFrase{
+  position: absolute;
+  bottom: 20vh;
+  right: 20vw;
+  font-size: 22px;
+  transform: rotate(-15deg);
+  font-family: "Pacifico", cursive;
+}
+.linha{
+  border: 3px solid #434242;
+  width: 96.6vw;
+  height: 86vh;
+  position: absolute;
+  top: 12vh;
+  left: 1vw;
+}
 
 /* Sobre */
 #sobre {
@@ -554,6 +570,18 @@ header .headerImg4 {
   #contato .container li {
     font-size: 20px;
   }
+  .headerFrase{
+    bottom: 16vh;
+    right: 10vw;
+    font-size: 30px;
+  }
+  .linha{
+    width: 97.8vw;
+    height: 88.7vh;
+    position: absolute;
+    top: 10.6vh;
+    left: 1vw;
+  }
 }
 @media screen and (max-width: 770px) {
   nav .menu {
@@ -625,6 +653,7 @@ header .headerImg4 {
   .footerClass p {
     font-size: 14px;
   }
+  
 }
 @media only screen and (max-width: 480px) {
   .title p {
@@ -729,6 +758,11 @@ header .headerImg4 {
   }
   .footerClass p {
     font-size: 12px;
+  }
+  .headerFrase{
+    bottom: 18vh;
+    right: 10vw;
+    font-size: 16px;
   }
 }
 @media only screen and (max-width: 330px) {
