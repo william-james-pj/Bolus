@@ -665,6 +665,9 @@ header .headerImg4 {
   nav .menu .menuBotao {
     display: flex;
   }
+  header {
+    height: 90vh;
+  }
   header img {
     width: 20%;
   }
