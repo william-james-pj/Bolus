@@ -631,7 +631,7 @@ header .headerImg4 {
     font-size: 20px;
   }
   .title .line {
-    width: 80px;;
+    width: 80px;
   }
   nav .menu .menuBotao {
     display: flex;
@@ -721,7 +721,7 @@ header .headerImg4 {
     padding:  0px;
   }
   #contato .container .contatoInfo .colHorario {
-    padding: 0px;
+    padding: 0px 0px 0px 20px;
   }
   #contato .container .contatoImg .imgContainer {
     width: 60%;
