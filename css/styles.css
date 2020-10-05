@@ -666,7 +666,8 @@ header .headerImg4 {
     display: flex;
   }
   header {
-    height: 80vh;
+    height: 90vh;
+    overflow: hidden;
   }
   header img {
     width: 20%;
