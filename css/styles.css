@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 * {
   margin: 0;
@@ -10,14 +9,23 @@
 body {
   background: #fdfdfd;
 }
-a{
+a {
   text-decoration: none;
   color: #000;
 }
-a,h1,h2,h3,h4,p{
+a,
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0px;
   padding: 0px;
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
+}
+ul,
+li {
+  list-style: none;
 }
 
 /* Nav */
@@ -55,12 +63,12 @@ nav .menu ul li {
   margin-left: 20px;
   list-style: none;
 }
-nav .menu ul li a{
+nav .menu ul li a {
   display: block;
   text-transform: capitalize;
   color: #000;
 }
-nav .menu ul li a:hover{
+nav .menu ul li a:hover {
   color: #fff;
 }
 nav .menu .menuBotao {
@@ -109,17 +117,17 @@ header {
   overflow: hidden;
   margin-top: 10vh;
 }
-header .headerTitle{
+header .headerTitle {
   width: 100%;
   height: 100%;
   flex-direction: column;
 }
-header .headerTitle h1{
+header .headerTitle h1 {
   font-size: 58px;
 }
-header .headerTitle p{
+header .headerTitle p {
   margin-top: 15px;
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   font-size: 16px;
 }
 header img {
@@ -172,7 +180,7 @@ header .headerImg4 {
   z-index: 1;
   overflow: hidden;
 }
-#sobre .logo img{
+#sobre .logo img {
   position: relative;
   top: 0;
   left: 0;
@@ -194,14 +202,14 @@ header .headerImg4 {
   flex-direction: column;
   align-items: flex-start;
 }
-#sobre .descricao p:nth-child(1){
+#sobre .descricao p:nth-child(1) {
   margin-bottom: 40px;
 }
-#sobre .descricao p:nth-child(2){
+#sobre .descricao p:nth-child(2) {
   margin-bottom: 20px;
 }
-#sobre .descricao p{
-  font-family: 'Pacifico', cursive;
+#sobre .descricao p {
+  font-family: "Pacifico", cursive;
 }
 /* Receitas*/
 
@@ -222,20 +230,20 @@ header .headerImg4 {
   height: auto;
   flex-direction: column;
 }
-#receitas .title {
+.title {
   width: 100%;
   height: 10vh;
 }
-#receitas .title p{
+.title p {
   font-size: 24px;
 }
-#receitas .title .line {
+.title .line {
   width: 122px;
   height: 0px;
   border-radius: 40px;
   border: 2px solid #000000;
 }
-#receitas .title .text {
+.title .text {
   margin: 0 40px 0 40px;
   font-size: 18px;
 }
@@ -415,6 +423,87 @@ header .headerImg4 {
   display: block;
 }
 
+/* Modal */
+
+#contato {
+  width: 100%;
+  height: 60vh;
+  background: #fbe0dc;
+}
+#contato .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "contatoInfo contatoImg";
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+  padding: 20px;
+}
+
+#contato .container .contatoInfo {
+  grid-area: contatoInfo;
+  display: grid;
+  grid-template-columns: 0.8fr 0.9fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "colTelefone colHorario";
+  width: 100%;
+  height: 100%;
+  padding-left: 10vw;
+}
+#contato .container .contatoInfo .colTelefone {
+  grid-area: colTelefone;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+}
+#contato .container .contatoInfo .colTelefone .icons {
+  margin-left: 20px;
+}
+#contato .container .contatoInfo .colTelefone .icons li {
+  margin-right: 0px;
+}
+#contato .container .contatoInfo .colHorario {
+  grid-area: colHorario;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+}
+#contato .container .contatoImg {
+  grid-area: contatoImg;
+}
+#contato .container .contatoImg .imgContainer {
+  width: 50%;
+  height: 70%;
+  background: #353535;
+  border-radius: 20px;
+  overflow: hidden;
+}
+#contato .container p {
+  font-size: 18px;
+}
+#contato .container li {
+  margin: 20px 0px 20px 20px;
+  font-size: 16px;
+}
+
+.footerClass {
+  width: 100%;
+  height: 10vh;
+  background-color: #353535;
+  justify-content: flex-start;
+}
+.footerClass p {
+  margin-left: 10vw;
+  color: #fff;
+  font-size: 12px;
+  font-family: Arial;
+}
+
 @media only screen and (max-width: 1030px) {
   #sobre {
     height: 70vh;
@@ -423,11 +512,11 @@ header .headerImg4 {
     width: 70%;
     height: 30%;
   }
-  #sobre .descricao{
+  #sobre .descricao {
     width: 90%;
     height: 40%;
   }
-  #sobre .descricao p{
+  #sobre .descricao p {
     font-size: 18px;
   }
   #receitas .title .text {
@@ -447,6 +536,23 @@ header .headerImg4 {
     width: 60vw;
     height: 50vh;
     box-shadow: 0 0 20px -5px #000000;
+  }
+  #contato {
+    width: 100%;
+    height: 30vh;
+  }
+  #contato .container {
+    height: 60%;
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+  #contato .container .contatoInfo {
+    padding-left: 5vw;
+  }
+  #contato .container p {
+    font-size: 22px;
+  }
+  #contato .container li {
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 770px) {
@@ -495,44 +601,74 @@ header .headerImg4 {
   #sobre .descricao {
     height: 50%;
   }
+  #contato {
+    width: 100%;
+    height: 40vh;
+  }
+  #contato .container {
+    height: 70%;
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+  #contato .container .contatoInfo {
+    padding-left: 2vw;
+  }
+  #contato .container p {
+    font-size: 18px;
+  }
+  #contato .container li {
+    font-size: 16px;
+  }
+  #contato .container .contatoImg .imgContainer {
+    width: 60%;
+    height: 60%;
+  }
+  .footerClass p {
+    font-size: 14px;
+  }
 }
 @media only screen and (max-width: 480px) {
+  .title p {
+    font-size: 20px;
+  }
+  .title .line {
+    width: 80px;;
+  }
   nav .menu .menuBotao {
     display: flex;
   }
   header img {
     width: 20%;
   }
-  header .headerTitle h1{
+  header .headerTitle h1 {
     font-size: 38px;
   }
-  header .headerTitle p{
+  header .headerTitle p {
     font-size: 14px;
   }
   #sobre {
     height: 100vh;
     grid-template-columns: 1fr;
     grid-template-areas:
-    "logo"
-    "logo"
-    "logo"
-    "logo"
-    "descricao"
-    "descricao"
-    "descricao"
-    "descricao"
-    "descricao";
+      "logo"
+      "logo"
+      "logo"
+      "logo"
+      "descricao"
+      "descricao"
+      "descricao"
+      "descricao"
+      "descricao";
     padding-bottom: 45%;
   }
   #sobre .logo {
     width: 60%;
     height: 50%;
-    grid-row:  logo / span 5;
+    grid-row: logo / span 5;
     grid-column: 1;
     justify-self: center;
     align-self: flex-end;
   }
-  #sobre .descricao{
+  #sobre .descricao {
     width: 80%;
     height: 100%;
     padding-left: 30px;
@@ -540,10 +676,10 @@ header .headerImg4 {
     justify-self: center;
     align-self: flex-start;
   }
-  #sobre .descricao p:nth-child(1){
+  #sobre .descricao p:nth-child(1) {
     margin-bottom: 20px;
   }
-  #sobre .descricao p{
+  #sobre .descricao p {
     font-size: 12px;
   }
   #receitas .title .text {
@@ -567,6 +703,32 @@ header .headerImg4 {
     width: 90vw;
     height: 40vh;
     box-shadow: 0 0 20px -5px #000000;
+  }
+  #contato {
+    width: 100%;
+    height: 70vh;
+  }
+  #contato .container {
+    height: 80%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "contatoInfo"
+      "contatoImg";
+    padding: 10px 20px;
+  }
+  #contato .container .contatoInfo .colTelefone {
+    padding:  0px;
+  }
+  #contato .container .contatoInfo .colHorario {
+    padding: 0px;
+  }
+  #contato .container .contatoImg .imgContainer {
+    width: 60%;
+    height: 70%;
+  }
+  .footerClass p {
+    font-size: 12px;
   }
 }
 @media only screen and (max-width: 330px) {
