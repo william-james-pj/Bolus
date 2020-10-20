@@ -8,7 +8,7 @@ menuNav.onclick = function () {
   } else {
     menuNav.classList.add("closeMenu");
     ul.classList.add("showMenu");
-  }  
+  }
   let lis = document.querySelectorAll("nav ul li");
   lis.forEach((li) => {
     li.onclick = function () {
@@ -157,14 +157,15 @@ imgItens.forEach((imgItem) => {
   imgItem.onclick = function () {
     let valor = this.getAttribute("modal-item");
     let imgBox = document.querySelector(`[modal-item="${valor}"] img`);
-    criarModal(imgBox, valor);
+    let tipoItem = this.getAttribute("tipoItem");
+    criarModal(imgBox, valor, tipoItem);
     buttonCloseModal();
     addClass(modalFundo, "displayBlock", 0, 1, 0);
     removerClass(modalFundo, "displayNone", 0, 1, 0);
   };
 });
 
-function criarModal(imgBox, valor) {
+function criarModal(imgBox, valor, tipoItem) {
   let div = document.createElement("div");
   div.classList.add("modal");
 
@@ -181,10 +182,21 @@ function criarModal(imgBox, valor) {
   divImg.classList.add("imgModal");
   divImg.appendChild(imgBox.cloneNode(true));
   divConteudo.appendChild(divImg);
-  let texto = document.createElement("div");
-  texto.classList.add("texto");
-  texto.textContent = valor;
-  divConteudo.appendChild(texto);
+
+  let textoContainer = document.createElement("div");
+  textoContainer.classList.add("textoContainer");
+
+  let h3 = document.createElement("H3");
+  let t2 = document.createTextNode(tipoItem);
+  h3.appendChild(t2);
+  h3.classList.add("titleText");
+  textoContainer.appendChild(h3);
+
+  let p = document.createElement("P");
+  var t = document.createTextNode(valor);
+  p.appendChild(t);
+  textoContainer.appendChild(p);
+  divConteudo.appendChild(textoContainer);
   div.appendChild(divConteudo);
 
   modalFundo.appendChild(div);

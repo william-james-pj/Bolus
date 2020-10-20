@@ -430,16 +430,26 @@ header .headerImg4 {
   height: 100%;
   object-fit: cover;
 }
-.modal .modalConteudo .texto {
+.modal .modalConteudo .textoContainer {
   grid-area: texto;
-  justify-self: start;
+  justify-self: center;
+  align-self: flex-start;
   overflow: hidden;
+  padding: 20px;
+  padding-top: 60px;
+  text-align: center;
+}
+.modal .modalConteudo .textoContainer .titleText {
+  margin-bottom: 20px;
+}
+.modal .modalConteudo .textoContainer p {
+  font-size: 16;
 }
 .displayBlock {
   display: block;
 }
 
-/* Modal */
+/* Contato */
 
 #contato {
   width: 100%;
