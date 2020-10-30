@@ -503,9 +503,8 @@ header .headerImg4 {
   grid-area: contatoImg;
 }
 #contato .container .contatoImg .imgContainer {
-  width: 50%;
+  width: 60%;
   height: 70%;
-  background: #353535;
   border-radius: 20px;
   overflow: hidden;
 }
